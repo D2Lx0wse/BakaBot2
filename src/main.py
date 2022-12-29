@@ -122,7 +122,10 @@ prefix: !
 (disabled) cute <name of character>: returns a random picture of the character
 howretard <ping>:         proves that we're all retarded
 rps <word>                play rps with this bitch
-... <alias name>:         can you find them? 
+... <alias name>:         can you find them?
+mine                      mines 1 bakacoin, can be used 1 time every 5 minutes not server wide
+invest                    invests all the bakacoin, higher canche of halving the coins than doubling them, only way to win in reasonable times
+balance                   prints balance
 
 other notable features:
 - autorespond - your messages have a chance of being replied by BakaBot
@@ -195,4 +198,7 @@ async def on_message(message: Message):
 
 aliases.load()
 client.add_command(gamering.rps)
+client.add_command(gamering.mine)
+client.add_command(gamering.balance)
+client.add_command(gamering.invest)
 client.run(TOKEN.read())
