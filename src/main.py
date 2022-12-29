@@ -1,3 +1,5 @@
+import sys
+from chatgpt import Conversation
 import io
 import random
 from urllib.request import urlopen
@@ -28,6 +30,24 @@ intents.message_content = True
 
 client = Bot(intents=intents, command_prefix="!")
 
+def my_channel_only():
+    def predicate(ctx):
+        if ctx.channel != 1008105743611863141:
+            # check if the 
+            raise commands.CheckFailure("lmao that's not the bot channel lololol")
+        return True
+
+    return commands.check(predicate)
+
+
+@my_channel_only()
+@client.command()
+@commands.cooldown(1.0, 30.0, commands.BucketType.guild)
+async def chat(ctx, question: str):
+    conversation = Conversation()
+    result = conversation.chat(question)
+    await ctx.send(result)
+   
 
 @client.event
 async def on_ready():
