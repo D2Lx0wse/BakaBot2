@@ -5,3 +5,4 @@ TOKEN
 /src/timer
 /.idea/
 /src/block
+/src/config.json
