@@ -37,7 +37,7 @@ async def balance(context: Context,):
 async def invest(context: Context,):
     global coin
     winchance = randint(1, 5)
-    win = 2
+    win = 3
     if winchance >= win:
         coin = coin * 2
     else:
