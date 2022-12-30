@@ -22,7 +22,7 @@ async def mine(context: Context,):
         text +=coint
         text +=" bakacoin."
         with open("coin", "w") as coinsave:
-            coinsave.write(coin)
+            coinsave.write(coint)
         await context.send(text) 
 
 @command()
@@ -55,12 +55,12 @@ async def invest(context: Context,):
             coin = coin * 2
         else:
             coin = coin / 2
-        with open("coin", "w") as coinsave:
-            coinsave.write(coin)
         coint =str(coin)
         text ="You bakas have "
         text +=coint
         text +=" bakacoin."
+        with open("coin", "w") as coinsave:
+            coinsave.write(coint)
         await context.send(text) 
     
 @command()
