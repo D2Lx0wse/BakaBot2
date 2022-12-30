@@ -10,7 +10,7 @@ coin = 1
 @command()
 @commands.cooldown(1.0, 2.0, commands.BucketType.guild)
 async def mine(context: Context,):
-    if context.channel !=bot-channel:
+    if context.channel !="bot-channel":
         return
     else:
         global coin
@@ -24,7 +24,7 @@ async def mine(context: Context,):
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
 async def balance(context: Context,):
-    if context.channel !=bot-channel:
+    if context.channel !="bot-channel":
         return
     else:
         global coin
@@ -41,7 +41,7 @@ async def balance(context: Context,):
 @command()
 @commands.cooldown(1.0, 120.0, commands.BucketType.guild)
 async def invest(context: Context,):
-    if context.channel !=bot-channel:
+    if context.channel !="bot-channel":
         return
     else:
         global coin
