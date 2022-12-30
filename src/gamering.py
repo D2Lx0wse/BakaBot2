@@ -3,7 +3,9 @@ from discord.ext import commands
 from discord.ext.commands import Context, command
 from random import randint
 
-coin = 1
+with open("coin", "r") as coinsave:
+    coinS = coinsave.read()
+coin = float(coinS)
 
 
 
@@ -19,6 +21,8 @@ async def mine(context: Context,):
         text ="You bakas have "
         text +=coint
         text +=" bakacoin."
+        with open("coin", "w") as coinsave:
+            coinsave.write(coin)
         await context.send(text) 
 
 @command()
@@ -51,6 +55,8 @@ async def invest(context: Context,):
             coin = coin * 2
         else:
             coin = coin / 2
+        with open("coin", "w") as coinsave:
+            coinsave.write(coin)
         coint =str(coin)
         text ="You bakas have "
         text +=coint
