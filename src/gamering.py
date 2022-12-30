@@ -8,45 +8,54 @@ coin = 1
 
 
 @command()
-@commands.cooldown(1.0, 300.0, commands.BucketType.user)
+@commands.cooldown(1.0, 2.0, commands.BucketType.guild)
 async def mine(context: Context,):
-    global coin
-    coin +=1
-    coint =str(coin)
-    text ="You bakas have "
-    text +=coint
-    text +=" bakacoin."
-    await context.send(text) 
+    if context.channel !=1008105743611863141:
+        return
+    else:
+        global coin
+        coin +=1
+        coint =str(coin)
+        text ="You bakas have "
+        text +=coint
+        text +=" bakacoin."
+        await context.send(text) 
 
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
 async def balance(context: Context,):
-    global coin
-    if coin == 1000:
-        text ="everythingonarm they did it !!!!!! look!!!!"
-    elif coin <= 1000:
-        coint =str(coin)
-        text = coint
-        text +=" bakacoin"
+    if context.channel !=1008105743611863141:
+        return
     else:
-        text ="everythingonarm they did it !!!!!! look!!!!"
-    await context.send(text) 
+        global coin
+        if coin == 1000:
+            text ="everythingonarm they did it !!!!!! look!!!!"
+        elif coin <= 1000:
+            coint =str(coin)
+            text = coint
+            text +=" bakacoin"
+        else:
+            text ="everythingonarm they did it !!!!!! look!!!!"
+        await context.send(text) 
     
 @command()
-@commands.cooldown(1.0, 150.0, commands.BucketType.guild)
+@commands.cooldown(1.0, 120.0, commands.BucketType.guild)
 async def invest(context: Context,):
-    global coin
-    winchance = randint(1, 5)
-    win = 3
-    if winchance >= win:
-        coin = coin * 2
+    if context.channel !=1008105743611863141:
+        return
     else:
-        coin = coin / 2
-    coint =str(coin)
-    text ="You bakas have "
-    text +=coint
-    text +=" bakacoin."
-    await context.send(text) 
+        global coin
+        winchance = randint(1, 5)
+        win = 3
+        if winchance >= win:
+            coin = coin * 2
+        else:
+            coin = coin / 2
+        coint =str(coin)
+        text ="You bakas have "
+        text +=coint
+        text +=" bakacoin."
+        await context.send(text) 
     
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
