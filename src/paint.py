@@ -33,7 +33,7 @@ async def paint(context: Context, height: int, width: int, color: str):
              newlinevalue = [4, 9,]
              for pxl in canvas:
                  text += discordcolors[pxl]
-                 indexpxl = index(pxl)
+                 indexpxl = discordcolors.index(pxl)
                  if indexpxl in newlinevalue:
                      text += " \n "
                  else:
