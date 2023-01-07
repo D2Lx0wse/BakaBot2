@@ -21,7 +21,7 @@ async def paint(context: Context, height: int, width: int, color: str):
          colorind = colors.index(color) 
          choice = discordcolors[colorind]
          canvaschoice = height * 5 + width - 1
-         if canvaschoice >= 14:
+         if canvaschoice >= 15:
              text = "that's not a valid pixel silly"
              await context.send(text)
          else:
