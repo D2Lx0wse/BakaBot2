@@ -79,7 +79,7 @@ async def dev(context: Context):
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
 async def howretard(context: Context, *, lmao: discord.Member):
     random.seed(str(lmao))
-    if ctx.author.id in adminperms:
+    if context.author.id in adminperms:
       test = 2147483647 #playing it safe. dunno if the shits running on a 64bit machine. or if python has unsigned ints
     else:
       test = random.randint(1,100)
