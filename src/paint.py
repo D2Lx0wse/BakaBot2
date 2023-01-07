@@ -10,13 +10,14 @@ with open('canvas', 'r') as f:
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
 async def paint(context: Context, height: int, width: int, color: str):
+    height -= 1
     global canvas
     colors = ["red", "orange", "yellow", "green", "blue", "purple", "brown", "white", "black"]
     if color not in colors:
          text = "that's not a color silly"
          await context.send(text)
     else:
-         discordcolors = [":red_square:", ":orange_square:", ":yellow_square:", ":green_square:", ":blue_square:", ":purple_square:", ":brown_square:", ":large_white_square:", ":large_black_square:", ]
+         discordcolors = [":red_square:", ":orange_square:", ":yellow_square:", ":green_square:", ":blue_square:", ":purple_square:", ":brown_square:", ":white_large_square:", ":black_large_square:", ]
          colorind = colors.index(color) 
          choice = discordcolors[colorind]
          canvaschoice = height * 5 + width - 1
