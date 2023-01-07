@@ -3,7 +3,6 @@ from discord.ext import commands
 
 canvas = []
 with open('canvas', 'r') as f:
-    global canvas
     for line in f:
         canvas.append(int(line.strip()))
 
