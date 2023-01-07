@@ -12,6 +12,7 @@ import pathlib
 import alias as aliases
 import gamering
 from checkformessages import checkformessages
+import paint
 
 adminperms = [712639419785412668, 268103439614083074,
               867751309923188737, 369197839680536576, 198407032200626176, 266994249344614410, 710850540229230663, 572515356225306624]
@@ -204,4 +205,5 @@ client.add_command(gamering.rps)
 client.add_command(gamering.mine)
 client.add_command(gamering.balance)
 client.add_command(gamering.invest)
+client.add_command(paint.paint)
 client.run(TOKEN.read())
