@@ -10,7 +10,7 @@ with open('canvas', 'r') as f:
 
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
-async def paint(context: Context, height: int, width: int, color: str)
+async def paint(context: Context, height: int, width: int, color: str):
     global canvas
     colors = ["red", "orange", "yellow", "green", "blue", "purple", "brown", "white", "black"]
     if color not in colors:
