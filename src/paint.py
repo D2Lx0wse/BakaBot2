@@ -38,7 +38,7 @@ async def paint(context: Context, height: int, width: int, color: str):
                      text += " \n "
                  else:
                      text += " "
-                 indexpixl+1
+                 indexpxl += 1
              await context.send(text)
                  
                 
