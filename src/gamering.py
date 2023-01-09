@@ -56,7 +56,7 @@ async def pochiguess(context: Context, guess: int):
           pochicoin -= guess
           with open("pochicoin", "w") as pochicoinsave:
               pochicoinsave.write(str(pochicoin))
-    await(context.send.text) #maybe
+    await context.send(text) #maybe
 
 @command()
 @commands.cooldown(1.0, 2.0, commands.BucketType.guild)
