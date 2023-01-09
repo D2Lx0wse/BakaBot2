@@ -9,17 +9,21 @@ coin = float(coinS)
 
 with open("pochicoin", "r") as pochicoinsave:
     pochicoinS = pochicoinsave.read()
-pochicoin = int(coinS)
+pochicoin = int(pochicoinS)
+
+with open("chain", "r") as chainsave:
+    chainS = chainsave.read()
+chain = int(chainS)
 
 
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
-async def balance(context: Context,):
+async def pochibalancebalance(context: Context,):
     if str(context.channel) !="bot-channel":
         return
     else:
         global pochicoin
-        pochicoint =str(pochicoin)
+        pochicoint = str(pochicoin)
         text = pochicoint
         text +=" pochicoin"
         await context.send(text) 
