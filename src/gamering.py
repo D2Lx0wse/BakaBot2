@@ -7,7 +7,52 @@ with open("coin", "r") as coinsave:
     coinS = coinsave.read()
 coin = float(coinS)
 
+with open("pochicoin", "r") as pochicoinsave:
+    pochicoinS = pochicoinsave.read()
+pochicoin = int(coinS)
 
+
+@command()
+@commands.cooldown(1.0, 30.0, commands.BucketType.guild)
+async def balance(context: Context,):
+    if str(context.channel) !="bot-channel":
+        return
+    else:
+        global pochicoin
+        pochicoint =str(pochicoin)
+        text = pochicoint
+        text +=" pochicoin"
+        await context.send(text) 
+        
+@command()
+@commands.cooldown(1.0, 30.0, commands.BucketType.guild)
+async def pochiguess(context: Context, guess: int):
+    global pochicoin
+    bread = randint(1,16)
+    guessstr = str(guess)
+    if guess == bread :
+          chain += 1
+          prize = bread * chain
+          text = "You guessed right. You won"
+          text += str(prize)
+          pochicoin += prize
+          with open("pochicoin", "w") as pochicoinsave:
+              pochicoinsave.write(str(pochicoin))
+          text += " pochicoin and you streak is"
+          text += str(chain)
+          with open("chain", "w") as chainsave:
+              chainsave.write(str(chain))
+    else :
+          chain = 0
+          with open("chain", "w") as chainsave:
+              chainsave.write(str(chain))
+          text = "You guessed wrong. You lost"
+          text += guessstr
+          text += " pochicoin and your strike is reset"
+          pochicoin -= guess
+          with open("pochicoin", "w") as pochicoinsave:
+              pochicoinsave.write(str(pochicoin))
+    await(context.send.text) #maybe
 
 @command()
 @commands.cooldown(1.0, 2.0, commands.BucketType.guild)
