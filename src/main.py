@@ -126,14 +126,25 @@ async def wot(context: Context):
         await context.send\
 ("""```
 BakaBot2 version idk
-prefix: !
+prefix: ! (I need a new one! send proposal to everythingonarm)
+
 (disabled) cute <name of character>: returns a random picture of the character
+
 howretard <ping>:         proves that we're all retarded
-rps <word>                play rps with this bitch
+
+rps <word>:               play rps with this bitch
+
 ... <alias name>:         can you find them?
-mine                      mines 1 bakacoin, can be used 1 time every 5 minutes not server wide
-invest                    invests all the bakacoin, higher canche of halving the coins than doubling them, only way to win in reasonable times
-balance                   prints balance
+
+mine:                      mines 1 bakacoin
+
+invest:                    invests all the bakacoin, higher canche of halving the coins than doubling them(maybe not)
+
+balance:                   sends balance
+
+pochiguess <int between 1 and 16>: guess how many slices of bread pochita ate for a reward              
+
+paint <y> <x> <color>:     paints a pixel of a 3 tall 5 wide grid with a color
 
 other notable features:
 - autorespond - your messages have a chance of being replied by BakaBot
