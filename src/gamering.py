@@ -18,7 +18,7 @@ chain = int(chainS)
 
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
-async def pochibalancebalance(context: Context,):
+async def pochibalance(context: Context,):
     if str(context.channel) !="bot-channel":
         return
     else:
