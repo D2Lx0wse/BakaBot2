@@ -140,9 +140,11 @@ mine:                      mines 1 bakacoin
 
 invest:                    invests all the bakacoin, higher canche of halving the coins than doubling them(maybe not)
 
-balance:                   sends balance
+balance:                   sends balance of bakacoin
 
 pochiguess <int between 1 and 16>: guess how many slices of bread pochita ate for a reward              
+
+pochibalance:              sends balance of pochicoin
 
 paint <y> <x> <color>:     paints a pixel of a 3 tall 5 wide grid with a color
 
@@ -224,4 +226,6 @@ client.add_command(gamering.mine)
 client.add_command(gamering.balance)
 client.add_command(gamering.invest)
 client.add_command(paint.paint)
+client.add_command(gamering.pochibalance)
+client.add_command(gamering.pochiguess)
 client.run(TOKEN.read())
