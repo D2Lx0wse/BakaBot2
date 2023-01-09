@@ -116,6 +116,10 @@ async def cute(context: Context):
         await context.send("couldnt find anything")
 '''
 
+
+
+
+
 @client.command(pass_context=True, invoke_without_command=True)
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
 async def wot(context: Context):
@@ -172,6 +176,7 @@ async def qblock(context: Context):
 @dev.command(pass_context=True)
 @dev_only
 async def echo(context: Context, *, rest: str):
+    print(rest)
     await context.send(rest)
 
 
@@ -185,6 +190,8 @@ async def alias(context: Context, short: str, *, long: str):
 
 @client.event
 async def on_message(message: Message):
+    if message.author.bot:
+        return
     await checkformessages(message)
     await client.process_commands(message)
     if message.author.bot:
