@@ -29,7 +29,7 @@ async def checkformessages(message: Message):
     elif "makima" in shitposts:
         await message.reply(
             "https://tenor.com/view/makima-bean-beans-chainsaw-man-gif-25992235")
-    elif "Banned" in shitposts:
+    elif "banned" in shitposts:
         await message.reply(
             "https://tenor.com/view/ban-banned-sakura-anime-spray-gif-22585378")
         timer_file.write_text(str(currenttime))
