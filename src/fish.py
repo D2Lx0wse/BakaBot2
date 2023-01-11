@@ -6,9 +6,10 @@ with open('fishtime', 'r') as timesave:
     aaa = timesave.read()
 with open('fishhealth', 'r') as healthsave:
     health = float(healthsave.read())
-
+fishdead = 0
 
 def hunger():
+    global fishdead
     currenttime = int(time.time())
     global health
     pasttime = currenttime - int(float(aaa))
@@ -47,6 +48,7 @@ async def fish(context: Context,):
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
 async def feedfish(context: Context,):
+    global fishdead
     global health
     hunger()
     if fishdead == 1:
