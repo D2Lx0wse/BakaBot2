@@ -21,7 +21,11 @@ def hunger():
         fishdead = 1
     else:
         fishdead = 0
-    
+    with open('fishtime', 'w') as timesave:
+        timesave.write(str(currenttime))
+    with open('fishhealth', 'w') as healthsave:
+        healthsave.write(str(health))
+
     
 @command()
 @commands.cooldown(1.0, 30.0, commands.BucketType.guild)
