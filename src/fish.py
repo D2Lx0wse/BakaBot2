@@ -56,5 +56,5 @@ async def feedfish(context: Context,):
     else:
         health += 20
         with open('fishhealth', 'w') as healthsave:
-            healthsave.write(health)
+            healthsave.write(str(health))
         await context.send("fishy fed")
