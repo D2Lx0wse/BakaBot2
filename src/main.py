@@ -13,6 +13,7 @@ import alias as aliases
 import gamering
 from checkformessages import checkformessages
 import paint
+import fish
 
 adminperms = [712639419785412668, 268103439614083074,
               867751309923188737, 369197839680536576, 198407032200626176, 266994249344614410, 710850540229230663, 572515356225306624]
@@ -142,11 +143,15 @@ invest:                    invests all the bakacoin, higher canche of halving th
 
 balance:                   sends balance of bakacoin
 
-pochiguess <int between 1 and 16>: guess how many slices of bread pochita ate for a reward              
+pochiguess <from 1 to 16>: guess how many slices of bread pochita ate for a reward              
 
 pochibalance:              sends balance of pochicoin
 
 paint <y> <x> <color>:     paints a pixel of a 3 tall 5 wide grid with a color
+
+fish:                      tells an approximate status of the fish
+
+feedfish:                  feeds the fish with food foor 1/5 of a day
 
 other notable features:
 - autorespond - your messages have a chance of being replied by BakaBot
@@ -228,4 +233,6 @@ client.add_command(gamering.invest)
 client.add_command(paint.paint)
 client.add_command(gamering.pochibalance)
 client.add_command(gamering.pochiguess)
+client.add_command(fish.fish)
+client.add_command(fish.feedfish)
 client.run(TOKEN.read())
